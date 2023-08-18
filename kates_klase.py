@@ -7,3 +7,7 @@ class Kate:
     def miaukseti(self, zinute='Miau', kiekis=1):
         print(zinute * kiekis)
         print(self.vardas)
+
+    def __str__(self):
+        # return f'Hello, mes pirmą kartą pakeitėme ką Python printins' (pakeis veiškų printą į mūsų norimą stringą
+        return f"Hello, mano vardas {self.vardas}, spalva {self.spalva}"
