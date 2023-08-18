@@ -1,0 +1,59 @@
+Šioje klasėje yra aprašyti pagrindiniai metodai, įskaitant konstruktorių __init__,
+metodą miaukštantį miaukseti, magišką metodą __str__ ir __repr__.
+Kiekvienam iš šių metodų yra pateikta trumpa dokumentacija, kurioje aprašoma,
+kaip jie veikia ir kaip juos galima naudoti.
+
+class Kate:
+    def __init__(self, spalva, vardas='Murksė', kojos=4):
+        """
+        Inicijuoti Kate objektą su nurodyta spalva, vardu ir kojų skaičiumi.
+
+        :param spalva: Kate spalva
+        :type spalva: str
+        :param vardas: Kate vardas (numatytasis: 'Murksė')
+        :type vardas: str
+        :param kojos: Kate kojų skaičius (numatytasis: 4)
+        :type kojos: int
+        """
+        self.spalva = spalva
+        self.kojos = kojos
+        self.vardas = vardas
+
+    def miaukseti(self, zinute='Miau', kiekis=1):
+        """
+        Išspausdinti miaukėjimo žinutę kelis kartus su Kate vardu.
+
+        :param zinute: Miaukėjimo žinutė (numatytasis: 'Miau')
+        :type zinute: str
+        :param kiekis: Kiek kartų išspausdinti žinutę (numatytasis: 1)
+        :type kiekis: int
+        """
+        print(zinute * kiekis)
+        print(self.vardas)
+
+    def __str__(self):
+        """
+        Grąžinti žmogiškai draugišką objekto aprašymą.
+
+        :return: Kate objekto aprašymas
+        :rtype: str
+        """
+        return f"Hello, mano vardas {self.vardas}, spalva {self.spalva}"
+
+    def __repr__(self):
+        """
+        Grąžinti oficialų objekto reprezentaciją, skirtą kodo interpretatoriui.
+
+        :return: Kate objekto reprezentacija
+        :rtype: str
+        """
+        return f"{self.vardas}|{self.spalva}|{self.kojos}"
+
+# Pavyzdžiai naudojimo:
+kate1 = Kate('juoda', 'Murkis', 4)
+kate2 = Kate('raudona', 'Pūkuota', 3)
+print(kate1)  # Hello, mano vardas Murkis, spalva juoda
+print(kate2)  # Hello, mano vardas Pūkuota, spalva raudona
+kate1.miaukseti()  # Miau
+                  # Murkis
+print(repr(kate2))  # Pūkuota|raudona|3
